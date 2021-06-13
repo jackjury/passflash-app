@@ -17,7 +17,7 @@ class Stepper extends Component {
           <Button
             size="small"
             onClick={() => {
-              this.props.updateAppState();
+              this.props.updateAppState(); // This calls the function passed in from the parent component;
               this.props.functions.incrementStep();
             }}
             disabled={this.props.step === 3 || !this.props.currentComplete}

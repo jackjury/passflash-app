@@ -17,7 +17,6 @@ class NameInputs extends Component {
             id="firstName"
             label="First Name"
             variant="outlined"
-            value={this.props.user.firstName}
             onChange={(e) => {
               this.setState({ ...this.state, firstName: e.target.value });
             }}
@@ -26,11 +25,19 @@ class NameInputs extends Component {
             id="lastName"
             label="Last Name"
             variant="outlined"
-            value={this.props.user.lastName}
             onChange={(e) => {
               this.setState({ ...this.state, lastName: e.target.value });
             }}
           />
+
+          <button
+            onClick={() => {
+              // This calls the updateAppState function from the name component, which works.
+              this.updateAppState();
+            }}
+          >
+            Update
+          </button>
         </div>
         <Stepper
           functions={this.props.functions}
@@ -47,6 +54,7 @@ class NameInputs extends Component {
     }
   };
   updateAppState = () => {
+    // For this component, this calls the setName function which is in the App State
     this.props.user.setName(this.state.firstName, this.state.lastName);
   };
 }

@@ -12,15 +12,14 @@ class App extends Component {
     user: {
       firstName: null,
       lastName: null,
-      setName: (first, last) => {
-        console.log(`input is: ${first} ${last}`);
+      setName: (firstName, lastName) => {
         this.setState({
           ...this.state,
           user: {
             ...this.state.user,
-            userisok: true,
+            firstName,
+            lastName,
           },
-          anotherthis: true,
         });
       },
       emailaddress: null,
