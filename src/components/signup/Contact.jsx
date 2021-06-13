@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
+import Stepper from "./Stepper";
 
 class Contact extends Component {
   render() {
@@ -28,6 +29,7 @@ class Contact extends Component {
             type="tel"
           />
         </div>
+        <Stepper functions={this.props.functions} step={this.props.step} />
       </>
     );
   }

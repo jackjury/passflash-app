@@ -57,3 +57,10 @@ body {
     }
   }
 }
+
+.MuiPaper-root.MuiMobileStepper-root.MuiMobileStepper-positionStatic.MuiPaper-elevation0 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

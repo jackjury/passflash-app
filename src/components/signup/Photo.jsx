@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import placeHolderImg from "../../img/placholder.png";
 import Button from "@material-ui/core/Button";
+import Stepper from "./Stepper";
 
 class Photo extends Component {
   state = {};
@@ -17,11 +18,12 @@ class Photo extends Component {
           variant="contained"
           color="primary"
           onClick={() => {
-            console.log("clicked");
+            this.props.incrementStep();
           }}
         >
           Choose a Photo
         </Button>
+        <Stepper functions={this.props.functions} step={this.props.step} />
       </>
     );
   }

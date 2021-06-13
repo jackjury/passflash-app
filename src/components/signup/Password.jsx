@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
+import Stepper from "./Stepper";
 
 class Password extends Component {
   state = {};
@@ -33,6 +34,7 @@ class Password extends Component {
             type="password"
           />
         </div>
+        <Stepper functions={this.props.functions} step={this.props.step} />
       </>
     );
   }

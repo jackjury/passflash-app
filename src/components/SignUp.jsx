@@ -3,38 +3,63 @@ import NameInputs from "./signup/Name";
 import Contact from "./signup/Contact";
 import Password from "./signup/Password";
 import Photo from "./signup/Photo";
-import Stepper from "./signup/Stepper";
 
 class SignUp extends Component {
-  state = {
-    step: 1,
-  };
+  state = {};
   render() {
     return (
       <>
         <div className="signUp">{this.displayStep()}</div>
-        <Stepper />
       </>
     );
   }
 
   displayStep() {
-    console.log(this.props);
     let step = this.props.data.step;
     switch (true) {
       case step === 0:
-        return <NameInputs />;
+        return (
+          <NameInputs
+            functions={this.props.functions}
+            user={this.props.user}
+            step={this.props.data.step}
+          />
+        );
 
       case step === 1:
-        return <Contact />;
+        return (
+          <Contact
+            functions={this.props.functions}
+            user={this.props.user}
+            step={this.props.data.step}
+          />
+        );
 
       case step === 2:
-        return <Password />;
+        return (
+          <Password
+            functions={this.props.functions}
+            user={this.props.user}
+            step={this.props.data.step}
+          />
+        );
 
       case step === 3:
-        return <Photo />;
+        return (
+          <Photo
+            functions={this.props.functions}
+            user={this.props.user}
+            step={this.props.data.step}
+          />
+        );
       default:
-        return <NameInputs />;
+        return (
+          <NameInputs
+            functions={this.props.functions}
+            user={this.props.user}
+            step={this.props.data.step}
+          />
+        );
     }
   }
 }
